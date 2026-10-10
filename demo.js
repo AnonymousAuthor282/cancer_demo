@@ -318,3 +318,42 @@ async function enhanceResults() {
 }
 installMedia().catch(() => announce('The scene stills and reported results remain available. Video information could not be loaded.'));
 enhanceResults().catch(() => {});
+
+// The original full-size image remains available when JavaScript is disabled.
+const paperDialog = $('paper-dialog');
+let paperZoom = 1;
+let paperTrigger = null;
+function fitPaperFigure(reset = false) {
+  if (!paperDialog.open) return;
+  if (reset) paperZoom = 1;
+  const image = $('paper-image');
+  const viewport = $('paper-viewport');
+  if (!image.naturalWidth) return;
+  const fit = Math.min(viewport.clientWidth / image.naturalWidth, viewport.clientHeight / image.naturalHeight);
+  image.style.width = `${Math.max(1, Math.floor(image.naturalWidth * fit * paperZoom))}px`;
+  $('paper-zoom-out').disabled = paperZoom <= 1;
+  $('paper-zoom-in').disabled = paperZoom >= 8;
+  if (reset) { viewport.scrollLeft = 0; viewport.scrollTop = 0; }
+}
+document.querySelectorAll('.paper-figure-link').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    paperTrigger = link;
+    $('paper-dialog-title').textContent = link.dataset.title;
+    $('paper-original').href = link.href;
+    $('paper-image').alt = link.querySelector('img').alt;
+    paperZoom = 1;
+    $('paper-image').onload = () => fitPaperFigure(true);
+    $('paper-image').src = link.href;
+    paperDialog.showModal();
+    document.body.classList.add('dialog-open');
+    fitPaperFigure(true);
+  });
+});
+$('paper-zoom-in').addEventListener('click', () => { paperZoom = Math.min(8, paperZoom * 1.5); fitPaperFigure(); });
+$('paper-zoom-out').addEventListener('click', () => { paperZoom = Math.max(1, paperZoom / 1.5); fitPaperFigure(); });
+$('paper-fit').addEventListener('click', () => fitPaperFigure(true));
+$('paper-dialog-close').addEventListener('click', () => paperDialog.close());
+paperDialog.addEventListener('close', () => { document.body.classList.remove('dialog-open'); paperTrigger?.focus({ preventScroll: true }); });
+window.addEventListener('resize', () => fitPaperFigure());

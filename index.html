@@ -16,7 +16,7 @@
   <a class="skip-link" href="#film">Skip to the demo</a>
   <header class="topbar">
     <a class="wordmark" href="#top" aria-label="TACER home">TACER<span aria-hidden="true">.</span></a>
-    <nav aria-label="Page navigation"><a href="#scenes">Scenes</a><a href="#interaction">Interaction</a><a href="#scale">Scale</a><a href="#results">Results</a></nav>
+    <nav aria-label="Page navigation"><a href="#scenes">Scenes</a><a href="#method">Method</a><a href="#interaction">Interaction</a><a href="#benchmark">Benchmark</a><a href="#results">Results</a></nav>
     <span class="review-label">Anonymous submission</span>
   </header>
   <main id="top">
@@ -36,6 +36,11 @@
       <article><span class="step-number">01</span><div><h2>Compose</h2><p>Images or text become structured assets and scene programs.</p></div></article>
       <article><span class="step-number">02</span><div><h2>Verify &amp; refine</h2><p>Checks guide local repairs to geometry, support, and articulation.</p></div></article>
       <article><span class="step-number">03</span><div><h2>Interact</h2><p>Export scenes for simulation and robot task execution.</p></div></article>
+    </section>
+
+    <section id="method" class="section" aria-labelledby="method-title">
+      <div class="section-heading"><div><p class="eyebrow">Method</p><h2 id="method-title">Build. Check. Refine.</h2></div><p>From an input specification to a structured,<br> verified tabletop scene.</p></div>
+      <figure class="paper-figure"><a class="paper-figure-link" href="assets/paper/method-pipeline.webp" data-title="The TACER pipeline" aria-label="Enlarge The TACER pipeline"><img src="assets/paper/method-pipeline.webp" width="3200" height="1444" loading="lazy" alt="The four-stage pipeline builds hierarchical asset and scene programs, verifies the resulting scene, and guides local repairs before export."><span class="figure-expand">View figure <span aria-hidden="true">↗</span></span></a><figcaption><strong>The TACER pipeline</strong><span>The four-stage pipeline builds hierarchical asset and scene programs, verifies the resulting scene, and guides local repairs before export.</span></figcaption></figure>
     </section>
 
     <section id="scenes" class="section" aria-labelledby="scenes-title">
@@ -101,7 +106,15 @@
       <div class="section-heading"><div><p class="eyebrow">03 / At scale</p><h2 id="scale-title">From a scene to a collection.</h2></div><p>Shared structure.<br> Many environments and arrangements.</p></div>
       <div id="scale-media" class="scale-media" hidden></div>
       <div class="scale-stats"><div><strong data-corpus="scenes">11,399</strong><span>generated scenes</span></div><div><strong data-corpus="environments">9</strong><span>environments</span></div><div><strong data-corpus="interactive_objects">50,114</strong><span>interactive-object instances</span></div></div>
+      <figure class="paper-figure"><a class="paper-figure-link" href="assets/paper/dataset-statistics.webp" data-title="Inside TACER-11K" aria-label="Enlarge Inside TACER-11K"><img src="assets/paper/dataset-statistics.webp" width="3200" height="1100" loading="lazy" alt="Dataset composition and asset statistics from the paper, across the generated scene collection."><span class="figure-expand">View figure <span aria-hidden="true">↗</span></span></a><figcaption><strong>Inside TACER-11K</strong><span>Dataset composition and asset statistics from the paper, across the generated scene collection.</span></figcaption></figure>
       <p class="scope-note">TACER-11K is the generated scene corpus. TabletopAudit is the separate evaluation benchmark used for the results below.</p>
+    </section>
+
+    <section id="benchmark" class="section benchmark" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">Evaluation protocol</p><h2 id="benchmark-title">Check the scene. Then try the task.</h2></div></div>
+      <div class="benchmark-intro"><p>TabletopAudit evaluates input fidelity, 3D quality, simulation validity, and embodied execution. Text and Image tracks share the same <strong>500 cases</strong> across <strong>9 domains</strong>.</p><p><strong>Embodied-100</strong> contains 60 rigid-object tasks and 40 articulated-object tasks. Evaluation distinguishes pass, fail, unknown, and inapplicable outcomes.</p></div>
+      <div class="audit-levels"><article><span>L1</span><h3>Input fidelity</h3><p>Objects, relations, placement, and attributes.</p></article><article><span>L2</span><h3>3D quality</h3><p>Collision, support, clearance, and appearance.</p></article><article><span>L3</span><h3>Simulation</h3><p>Loading, physics advancement, and stability.</p></article><article><span>L4</span><h3>Task execution</h3><p>Contact, planning, motion, and task completion.</p></article></div>
+      <figure class="paper-figure"><a class="paper-figure-link" href="assets/paper/benchmark-overview.webp" data-title="TabletopAudit benchmark" aria-label="Enlarge TabletopAudit benchmark"><img src="assets/paper/benchmark-overview.webp" width="3200" height="1786" loading="lazy" alt="Shared Text and Image cases cover nine domains. Four audit levels connect input fidelity and 3D quality to simulation validity and embodied task execution."><span class="figure-expand">View figure <span aria-hidden="true">↗</span></span></a><figcaption><strong>TabletopAudit benchmark</strong><span>Shared Text and Image cases cover nine domains. Four audit levels connect input fidelity and 3D quality to simulation validity and embodied task execution.</span></figcaption></figure>
     </section>
 
     <!-- BEGIN PAPER RESULTS -->
@@ -287,12 +300,15 @@
     </section>
     <!-- END PAPER RESULTS -->
 
-    <section id="benchmark" class="section benchmark" aria-labelledby="benchmark-title">
-      <div class="section-heading"><div><p class="eyebrow">Evaluation protocol</p><h2 id="benchmark-title">Check the scene. Then try the task.</h2></div></div>
-      <div class="benchmark-intro"><p>TabletopAudit evaluates input fidelity, 3D quality, simulation validity, and embodied execution. Text and Image tracks share the same <strong>500 cases</strong> across <strong>9 domains</strong>.</p><p><strong>Embodied-100</strong> contains 60 rigid-object tasks and 40 articulated-object tasks. Evaluation distinguishes pass, fail, unknown, and inapplicable outcomes.</p></div>
-      <div class="audit-levels"><article><span>L1</span><h3>Input fidelity</h3><p>Objects, relations, placement, and attributes.</p></article><article><span>L2</span><h3>3D quality</h3><p>Collision, support, clearance, and appearance.</p></article><article><span>L3</span><h3>Simulation</h3><p>Loading, physics advancement, and stability.</p></article><article><span>L4</span><h3>Task execution</h3><p>Contact, planning, motion, and task completion.</p></article></div>
-      <details class="method-details"><summary>Explore the method overview <span aria-hidden="true">+</span></summary><figure><img src="assets/method.webp" width="2200" height="993" loading="lazy" alt="TACER method overview: specifications, hierarchical programs, construction and verification, and scene export."><figcaption>Hierarchical asset and scene programs with verification-guided repair.</figcaption></figure></details>
+    <section id="qualitative" class="section" aria-labelledby="qualitative-title">
+      <div class="section-heading"><div><p class="eyebrow">Qualitative results</p><h2 id="qualitative-title">Compare the scenes. Inspect the details.</h2></div><p>Examples from the paper.<br> Open any figure to read the comparisons.</p></div>
+      <figure class="paper-figure"><a class="paper-figure-link" href="assets/paper/image-comparison.webp" data-title="Image-conditioned scene generation" aria-label="Enlarge Image-conditioned scene generation"><img src="assets/paper/image-comparison.webp" width="3200" height="1236" loading="lazy" alt="Qualitative comparisons from the Image track, shown with the input references and method labels used in the paper."><span class="figure-expand">View figure <span aria-hidden="true">↗</span></span></a><figcaption><strong>Image-conditioned scene generation</strong><span>Qualitative comparisons from the Image track, shown with the input references and method labels used in the paper.</span></figcaption></figure>
+      <figure class="paper-figure"><a class="paper-figure-link" href="assets/paper/text-comparison.webp" data-title="Text-conditioned scene generation" aria-label="Enlarge Text-conditioned scene generation"><img src="assets/paper/text-comparison.webp" width="3200" height="851" loading="lazy" alt="Qualitative comparisons from the Text track, showing scene construction from the same text specifications."><span class="figure-expand">View figure <span aria-hidden="true">↗</span></span></a><figcaption><strong>Text-conditioned scene generation</strong><span>Qualitative comparisons from the Text track, showing scene construction from the same text specifications.</span></figcaption></figure>
+      <figure class="paper-figure"><a class="paper-figure-link" href="assets/paper/multi-support.webp" data-title="Scenes with multiple support surfaces" aria-label="Enlarge Scenes with multiple support surfaces"><img src="assets/paper/multi-support.webp" width="3200" height="859" loading="lazy" alt="Generated bookshelf, office, workbench, and laboratory arrangements demonstrate the extension to multiple support surfaces."><span class="figure-expand">View figure <span aria-hidden="true">↗</span></span></a><figcaption><strong>Scenes with multiple support surfaces</strong><span>Generated bookshelf, office, workbench, and laboratory arrangements demonstrate the extension to multiple support surfaces.</span></figcaption></figure>
     </section>
+
+
+
   </main>
   <footer><a class="wordmark" href="#top">TACER<span aria-hidden="true">.</span></a><p>Anonymous supplementary material · Prepared scene and robot demonstrations</p><a href="#top">Back to top ↑</a></footer>
   <dialog id="scene-dialog" aria-labelledby="scene-dialog-title">
@@ -300,6 +316,12 @@
     <div class="scene-inspector-toolbar"><div class="scene-navigation"><button type="button" id="scene-prev" aria-label="Previous scene">←</button><button type="button" id="scene-next" aria-label="Next scene">→</button></div><div class="scene-view-modes" role="group" aria-label="Scene display"><button type="button" id="scene-mode-3d" aria-pressed="true">3D scene</button><button type="button" id="scene-mode-render" aria-pressed="false">Reference render</button></div><div class="scene-zoom"><button type="button" id="scene-zoom-out" aria-label="Zoom out">−</button><button type="button" id="scene-zoom-in" aria-label="Zoom in">+</button><button type="button" id="scene-fit">Reset view</button></div></div>
     <div id="scene-dialog-media" class="scene-image-viewport"><div id="scene-canvas-wrap" hidden></div><img id="scene-detail-image" alt=""><div id="scene-model-status" role="status" hidden><span id="scene-model-message">Loading 3D scene…</span><button type="button" id="scene-model-retry" class="button subtle" hidden>Try again</button></div></div>
     <div class="scene-inspector-footer"><p class="scope-note" id="scene-interaction-hint">Drag to rotate · Scroll or pinch to zoom · Right-drag to pan</p><a id="scene-original" href="assets/scenes/kitchen-detail.webp" target="_blank" rel="noopener">Open reference image ↗</a></div>
+  </dialog>
+  <dialog id="paper-dialog" aria-labelledby="paper-dialog-title">
+    <div class="paper-dialog-heading"><h2 id="paper-dialog-title">Paper figure</h2><button id="paper-dialog-close" class="button subtle" type="button">Close ×</button></div>
+    <div class="paper-toolbar"><div><button id="paper-zoom-out" type="button" aria-label="Zoom out figure">−</button><button id="paper-zoom-in" type="button" aria-label="Zoom in figure">+</button><button id="paper-fit" type="button">Fit</button></div><a id="paper-original" href="assets/paper/method-pipeline.webp" target="_blank" rel="noopener">Open full image ↗</a></div>
+    <div id="paper-viewport" tabindex="0" aria-label="Figure viewport. Scroll to inspect the enlarged image."><img id="paper-image" alt=""></div>
+    <p class="scope-note">Zoom in for labels and details. Scroll to explore the enlarged figure.</p>
   </dialog>
   <p class="sr-only" id="status" aria-live="polite"></p>
 </body>
