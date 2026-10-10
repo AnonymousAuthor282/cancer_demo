@@ -1,6 +1,5 @@
-# cancer_demo
+# TACER anonymous demo
 
-Anonymous supplementary demonstration for TACER.
+Anonymous supplementary website published from the main branch root with GitHub Pages.
 
-Interactive 3D examples, TabletopAudit benchmark overview, and reported results.
-All viewer dependencies and scene assets are served locally.
+Includes the 71-second film, eight explorable 3D scenes, seven robot operation comparisons, and paper results.

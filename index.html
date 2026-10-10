@@ -5,101 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="TACER: verified 3D tabletop scene generation for simulation and interaction. Anonymous supplementary demo.">
-  <title>TACER · Anonymous Demo</title>
+  <meta name="description" content="TACER: interactive 3D tabletop scenes from images or text. Scene visualizations, robot manipulation videos, and reported paper results.">
+  <meta name="theme-color" content="#fafaf7">
+  <title>TACER · Interactive tabletop scenes</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css">
-  <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js"}}</script>
   <script type="module" src="demo.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#explore">Skip to interactive examples</a>
+  <a class="skip-link" href="#film">Skip to the demo</a>
   <header class="topbar">
-    <a class="wordmark" href="#">TACER<span aria-hidden="true">.</span></a>
-    <nav aria-label="Page navigation"><a href="#explore">Explore</a><a href="#gallery">Gallery</a><a href="#method">Method</a><a href="#benchmark">Benchmark</a><a href="#results">Results</a><a href="#interaction">Interaction</a></nav>
+    <a class="wordmark" href="#top" aria-label="TACER home">TACER<span aria-hidden="true">.</span></a>
+    <nav aria-label="Page navigation"><a href="#scenes">Scenes</a><a href="#interaction">Interaction</a><a href="#scale">Scale</a><a href="#results">Results</a></nav>
     <span class="review-label">Anonymous submission</span>
   </header>
-  <main>
+  <main id="top">
     <section class="intro" aria-labelledby="title">
-      <p class="eyebrow">Interactive supplementary material</p>
-      <h1 id="title">Verified 3D tabletop scenes<br><span>for simulation and interaction.</span></h1>
-      <p class="summary">TACER turns images or text into interactive scenes through hierarchical asset and scene programs, with verification-guided repair.</p>
+      <p class="eyebrow"><span class="small-dot" aria-hidden="true"></span>From images and text to interactive 3D</p>
+      <h1 id="title">Tabletop scenes,<br> ready for <em>interaction.</em></h1>
+      <p class="summary">TACER builds structured 3D scenes, verifies their physical properties,<br class="desktop-break"> and refines them for simulation and robot manipulation.</p>
+      <div class="intro-links"><a class="button solid" href="#scenes">Explore scenes <span aria-hidden="true">↗</span></a><a class="text-link" href="#film">Watch the overview <span aria-hidden="true">↓</span></a></div>
     </section>
 
-    <section id="explore" class="explorer" aria-labelledby="explore-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / Explore the scenes</p><h2 id="explore-title">Small worlds. Multiple support levels.</h2></div><span class="section-note">3 programmatic examples</span></div>
-      <div class="workspace">
-        <aside class="case-list" aria-label="Choose a scene">
-          <button class="case active" data-case="desk" type="button" aria-pressed="true"><img src="assets/desk.webp" width="320" height="220" alt=""><span><strong>Computer desk</strong><small>Riser, shelf &amp; desktop</small></span><span class="case-number">01</span></button>
-          <button class="case" data-case="workbench" type="button" aria-pressed="false"><img src="assets/workbench.webp" width="320" height="220" alt=""><span><strong>Parts workbench</strong><small>Trays, bins &amp; tool storage</small></span><span class="case-number">02</span></button>
-          <button class="case" data-case="laboratory" type="button" aria-pressed="false"><img src="assets/laboratory.webp" width="320" height="220" alt=""><span><strong>Laboratory rack</strong><small>Elevated shelves &amp; glassware</small></span><span class="case-number">03</span></button>
-        </aside>
-        <div class="scene-panel">
-          <div class="viewer-toolbar"><strong id="scene-title">Computer desk</strong><div class="mode-switch" role="group" aria-label="Display mode"><button id="mode-preview" type="button" aria-pressed="true">Render</button><button id="mode-3d" type="button" aria-pressed="false">Explore in 3D</button></div></div>
-          <div class="viewport" id="viewport">
-            <img class="scene-preview" id="scene-preview" src="assets/desk.webp" alt="A computer desk with a raised monitor, desktop shelves, and a drawer unit.">
-            <div id="canvas-wrap" hidden></div>
-            <div id="load-overlay" hidden><span class="loader" aria-hidden="true"></span><span id="load-message">Loading 3D scene…</span><button id="retry" type="button" hidden>Try again</button></div>
-            <div class="view-controls" id="view-controls" hidden><button type="button" id="reset-view">Reset view</button><button type="button" id="top-view">Top view</button><button type="button" id="rotate" aria-pressed="false">Auto-rotate</button></div>
-            <span class="viewport-label" id="viewport-label">Rendered scene</span>
-          </div>
-          <div class="scene-caption"><p id="scene-description">A desktop supports a monitor riser, a drawer unit, and a small shelf. These structures provide additional surfaces for everyday objects.</p><span id="interaction-hint">Switch to 3D to inspect the scene.</span></div>
-          <p id="status" class="sr-only" aria-live="polite"></p>
-        </div>
-      </div>
-      <p class="scope-note">These prepared, programmatic cases illustrate the multi-support extension. The viewer displays stored scenes; it does not run generation, physics, or robot evaluation.</p>
-      <noscript><p>JavaScript is needed for scene switching and 3D exploration. The scene renders and method overview remain available below.</p></noscript>
+    <section id="film" class="film-section" aria-label="TACER overview film">
+      <div class="film-shell" id="film-media"><img src="assets/demo-poster.webp" width="1920" height="1080" alt="Four generated tabletop scenes: kitchen, dining table, laboratory, and workbench." fetchpriority="high"></div>
+      <div class="film-caption"><p><strong>TACER</strong><span>From scene construction to interaction</span></p><span id="film-duration">Selected scene overview</span></div>
     </section>
 
-    <section id="gallery" class="gallery" aria-labelledby="gallery-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / Scene gallery</p><h2 id="gallery-title">Across everyday and specialist settings.</h2></div><span class="section-note">Select an image to enlarge</span></div>
-      <div class="gallery-grid">
-        <figure><a href="assets/gallery-bathroom.webp" target="_blank" rel="noopener"><img src="assets/gallery-bathroom.webp" width="1600" height="900" loading="lazy" alt="Bathroom vanity scene with towels, bottles, a tray, and a basin."></a><figcaption><strong>Bathroom vanity</strong><span>Personal care &amp; small-object organization</span></figcaption></figure>
-        <figure><a href="assets/gallery-dining.webp" target="_blank" rel="noopener"><img src="assets/gallery-dining.webp" width="1600" height="900" loading="lazy" alt="Dining scene with tableware, a teapot, plates, and serving vessels."></a><figcaption><strong>Dining table</strong><span>Tableware &amp; serving arrangements</span></figcaption></figure>
-        <figure><a href="assets/gallery-kitchen.webp" target="_blank" rel="noopener"><img src="assets/gallery-kitchen.webp" width="1600" height="900" loading="lazy" alt="Kitchen counter with appliances, bowls, and fruit."></a><figcaption><strong>Kitchen counter</strong><span>Food preparation &amp; countertop appliances</span></figcaption></figure>
-        <figure><a href="assets/gallery-office.webp" target="_blank" rel="noopener"><img src="assets/gallery-office.webp" width="1600" height="900" loading="lazy" alt="Office tabletop with monitor, keyboard, lamp, and desk objects."></a><figcaption><strong>Office desk</strong><span>Work essentials &amp; compact layouts</span></figcaption></figure>
-        <figure><a href="assets/gallery-lab.webp" target="_blank" rel="noopener"><img src="assets/gallery-lab.webp" width="1600" height="900" loading="lazy" alt="Laboratory tabletop with instruments, glassware, a tube rack, and a tray."></a><figcaption><strong>Laboratory tabletop</strong><span>Instruments &amp; sample preparation</span></figcaption></figure>
-        <figure><a href="assets/gallery-workshop.webp" target="_blank" rel="noopener"><img src="assets/gallery-workshop.webp" width="1600" height="900" loading="lazy" alt="Workshop tabletop with tools, a parts tray, a vise, and measuring equipment."></a><figcaption><strong>Workshop tabletop</strong><span>Tools, components &amp; storage</span></figcaption></figure>
-      </div>
-      <p class="scope-note">Curated and locally repaired scene renders from the visualization collection. These examples show scene diversity, rather than an unedited sample of benchmark outputs.</p>
+    <section class="method-strip" aria-label="Method overview">
+      <article><span class="step-number">01</span><div><h2>Compose</h2><p>Images or text become structured assets and scene programs.</p></div></article>
+      <article><span class="step-number">02</span><div><h2>Verify &amp; refine</h2><p>Checks guide local repairs to geometry, support, and articulation.</p></div></article>
+      <article><span class="step-number">03</span><div><h2>Interact</h2><p>Export scenes for simulation and robot task execution.</p></div></article>
     </section>
 
-    <section id="method" class="method" aria-labelledby="method-title">
-      <div class="section-heading"><div><p class="eyebrow">03 / How TACER works</p><h2 id="method-title">Build, verify, and refine.</h2></div></div>
-      <div class="stages">
-        <article><span>01</span><h3>Understand the input</h3><p>Confirm object identities, support surfaces, and spatial relations.</p></article>
-        <article><span>02</span><h3>Construct assets</h3><p>Select asset routes and prepare geometry, physical representations, and articulation.</p></article>
-        <article><span>03</span><h3>Execute the layout</h3><p>Assemble hierarchical scene programs and use verification feedback to guide local repairs.</p></article>
-        <article><span>04</span><h3>Verify the scene</h3><p>Check scene consistency, support, clearance, settling, and perturbation responses.</p></article>
+    <section id="scenes" class="section" aria-labelledby="scenes-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Scene collection</p><h2 id="scenes-title">A small world on every table.</h2></div><p>Choose a scene. Look around.<br> Rotate and zoom into the arrangement.</p></div>
+      <div class="scene-grid">
+        <article class="scene-card" id="scene-kitchen">
+          <a class="scene-media scene-browse" data-scene="kitchen" href="assets/scenes/kitchen-detail.webp" aria-label="Inspect kitchen counter scene"><img src="assets/scenes/kitchen.webp" width="960" height="600" loading="lazy" alt="Generated kitchen counter scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Kitchen counter</h3><span>Appliances & tableware</span></div>
+        </article>
+        <article class="scene-card" id="scene-dining">
+          <a class="scene-media scene-browse" data-scene="dining" href="assets/scenes/dining-detail.webp" aria-label="Inspect dining table scene"><img src="assets/scenes/dining.webp" width="960" height="600" loading="lazy" alt="Generated dining table scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Dining table</h3><span>Dining & serving</span></div>
+        </article>
+        <article class="scene-card" id="scene-bathroom">
+          <a class="scene-media scene-browse" data-scene="bathroom" href="assets/scenes/bathroom-detail.webp" aria-label="Inspect bathroom vanity scene"><img src="assets/scenes/bathroom.webp" width="960" height="600" loading="lazy" alt="Generated bathroom vanity scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Bathroom vanity</h3><span>Personal-care essentials</span></div>
+        </article>
+        <article class="scene-card" id="scene-dressing">
+          <a class="scene-media scene-browse" data-scene="dressing" href="assets/scenes/dressing-detail.webp" aria-label="Inspect dressing table scene"><img src="assets/scenes/dressing.webp" width="960" height="600" loading="lazy" alt="Generated dressing table scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Dressing table</h3><span>Cosmetics & accessories</span></div>
+        </article>
+        <article class="scene-card" id="scene-office">
+          <a class="scene-media scene-browse" data-scene="office" href="assets/scenes/office-detail.webp" aria-label="Inspect office desk scene"><img src="assets/scenes/office.webp" width="960" height="600" loading="lazy" alt="Generated office desk scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Office desk</h3><span>Devices & desk essentials</span></div>
+        </article>
+        <article class="scene-card" id="scene-gaming">
+          <a class="scene-media scene-browse" data-scene="gaming" href="assets/scenes/gaming-detail.webp" aria-label="Inspect gaming table scene"><img src="assets/scenes/gaming.webp" width="960" height="600" loading="lazy" alt="Generated gaming table scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Gaming table</h3><span>Games & shared play</span></div>
+        </article>
+        <article class="scene-card" id="scene-laboratory">
+          <a class="scene-media scene-browse" data-scene="laboratory" href="assets/scenes/laboratory-detail.webp" aria-label="Inspect laboratory bench scene"><img src="assets/scenes/laboratory.webp" width="960" height="600" loading="lazy" alt="Generated laboratory bench scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Laboratory bench</h3><span>Instruments & glassware</span></div>
+        </article>
+        <article class="scene-card" id="scene-workbench">
+          <a class="scene-media scene-browse" data-scene="workbench" href="assets/scenes/workbench-detail.webp" aria-label="Inspect workbench scene"><img src="assets/scenes/workbench.webp" width="960" height="600" loading="lazy" alt="Generated workbench scene."><span class="inspect-label">Explore in 3D <span aria-hidden="true">↗</span></span></a>
+          <div class="scene-caption"><h3>Workbench</h3><span>Tools & components</span></div>
+        </article>
       </div>
-      <figure class="method-figure"><a href="assets/method.webp" target="_blank" rel="noopener" aria-label="Open full-size TACER method diagram"><img src="assets/method.webp" alt="TACER overview: specifications, hierarchical programs, construction and verification, and scene export." loading="lazy"></a><figcaption>Hierarchical programs connect asset construction, scene assembly, and verification-guided repair.</figcaption></figure>
+      <div class="section-footnote"><p>Eight curated scenes generated by TACER and refined through local repair. Open a scene to rotate, zoom, and inspect its 3D geometry. The reference render remains available alongside the model.</p><span class="section-note">8 scenes · Interactive 3D</span></div>
     </section>
 
-    <section id="benchmark" class="benchmark" aria-labelledby="benchmark-title">
-      <div class="section-heading"><div><p class="eyebrow">04 / TabletopAudit</p><h2 id="benchmark-title">Evaluate what a scene can actually do.</h2></div></div>
-      <p class="section-intro">An independent benchmark evaluates final scene submissions, from fidelity to the input through simulation and robot task execution.</p>
-      <div class="benchmark-stats">
-        <div><strong>500</strong><span>paired text / image cases</span></div>
-        <div><strong>9</strong><span>tabletop domains</span></div>
-        <div><strong>60 + 40</strong><span>rigid + articulated task cases</span></div>
+    <section id="interaction" class="section" aria-labelledby="interaction-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / Interaction</p><h2 id="interaction-title">Scenes that support action.</h2></div><p>Seven manipulation tasks,<br> seen through successful and failed runs.</p></div>
+      <div class="task-tabs" role="group" aria-label="Choose a manipulation task">
+        <button type="button" data-task="pick" aria-pressed="true">Pick</button>
+        <button type="button" data-task="place-into" aria-pressed="false">Place into</button>
+        <button type="button" data-task="place-onto" aria-pressed="false">Place onto</button>
+        <button type="button" data-task="rotate" aria-pressed="false">Rotate</button>
+        <button type="button" data-task="slide" aria-pressed="false">Slide</button>
+        <button type="button" data-task="open" aria-pressed="false">Open</button>
+        <button type="button" data-task="press" aria-pressed="false">Press</button>
       </div>
-      <p class="benchmark-composition">333 cases build on MesaTask; 167 add laboratory, office, and workshop settings. Text and Image tracks share case identities, while each exposes only its respective input.</p>
-      <div class="audit-levels">
-        <article><span class="level-number">L1</span><h3>Input fidelity</h3><p>Object count, spatial relations, placement, and visible attributes.</p><small>CNT · REL · PLC · ATR</small></article>
-        <article><span class="level-number">L2</span><h3>3D scene quality</h3><p>Collision, support, workspace boundaries, access clearance, and image appearance.</p><small>COL · SUP · EDGE · CLR · image metrics</small></article>
-        <article><span class="level-number">L3</span><h3>Simulation validity</h3><p>Scene loading, physics advancement, and target stability during settling.</p><small>LOAD · PHYS · STAB</small></article>
-        <article><span class="level-number">L4</span><h3>Embodied execution</h3><p>Grasp or contact poses, reachability, planning, physical execution, and task completion.</p><small>GRASP / POSE · REACH · PLAN · PICK / MOVE · TASK</small></article>
+      <div class="comparison-grid">
+        <article class="comparison-card"><div class="comparison-heading"><h3>TACER</h3><span class="outcome success">Successful run</span></div><div class="task-media" id="task-ours"><img src="assets/interactions/pick-ours.webp" width="960" height="540" loading="lazy" alt="TACER pick task in robot simulation."></div></article>
+        <article class="comparison-card"><div class="comparison-heading"><h3>Other method</h3><span class="outcome">Failed run</span></div><div class="task-media" id="task-other"><img src="assets/interactions/pick-other.webp" width="960" height="540" loading="lazy" alt="Other method pick task in robot simulation."></div></article>
       </div>
-      <div class="benchmark-tasks">
-        <article><h3>RigidManip-60</h3><p>20 Pick · 20 Place-into · 20 Place-onto</p></article>
-        <article><h3>Articulation-40</h3><p>20 Open · 8 Press · 8 Slide/Pull · 4 Rotate</p></article>
-      </div>
-      <p class="scope-note">Fidelity and scene quality use the 500-case tracks; simulation and robot execution use Embodied-100. Evaluation distinguishes pass, fail, unknown, and inapplicable outcomes. Missing evidence is not counted as a pass.</p>
+      <div class="comparison-controls"><p id="task-description">Pick · Grasp and lift the target object.</p><button id="replay-pair" type="button" class="button subtle" hidden>Play both clips <span aria-hidden="true">↻</span></button></div>
+      <p class="scope-note">Selected qualitative examples. Runs can differ in timing and duration; the comparison replays each original sequence. Method identities for the supplied failure clips were not specified. Benchmark success rates are reported separately below.</p>
+      <noscript><p class="scope-note">Enable JavaScript to switch tasks and play the manipulation videos.</p></noscript>
+    </section>
+
+    <section id="scale" class="section scale-section" aria-labelledby="scale-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / At scale</p><h2 id="scale-title">From a scene to a collection.</h2></div><p>Shared structure.<br> Many environments and arrangements.</p></div>
+      <div id="scale-media" class="scale-media" hidden></div>
+      <div class="scale-stats"><div><strong data-corpus="scenes">11,399</strong><span>generated scenes</span></div><div><strong data-corpus="environments">9</strong><span>environments</span></div><div><strong data-corpus="interactive_objects">50,114</strong><span>interactive-object instances</span></div></div>
+      <p class="scope-note">TACER-11K is the generated scene corpus. TabletopAudit is the separate evaluation benchmark used for the results below.</p>
     </section>
 
     <!-- BEGIN PAPER RESULTS -->
     <section id="results" class="results" aria-labelledby="results-title">
-      <div class="section-heading"><div><p class="eyebrow">05 / Quantitative results</p><h2 id="results-title">From stable scenes to successful tasks.</h2></div></div>
+      <div class="section-heading"><div><p class="eyebrow">04 / Paper results</p><h2 id="results-title">From stable scenes to successful tasks.</h2></div></div>
       <p class="section-intro">Results reported in the manuscript under shared benchmark protocols. The prepared scenes in this demo are separate qualitative examples.</p>
       <div class="result-highlights">
         <article><p>RigidManip-60 · TASK</p><strong>71.67%</strong><span>TACER task success, compared with 20.00% for TabletopGen.</span><b>+51.67 percentage points</b></article>
@@ -169,7 +176,7 @@
 <td><strong>62.50</strong></td>
 <td><strong>60.00</strong></td>
 </tr>
-</tbody></table></div><p class="table-note">POSE: contact/action pose generation; MOVE: executed joint motion. The articulated baseline augments TabletopGen with Articraft. Articulated TASK measures goal attainment during execution with contact and base-drift checks; sustained or terminal goal holding is not required.</p><details class="construction-results" open><summary>Text and Image tracks · construction quality</summary><p class="table-note">Pass rates (%) for binary metrics. LPIPS is lower-is-better; DINOv2 and CLIP report feature cosine similarity, higher-is-better. Bold follows the manuscript.</p><div class="result-table" role="region" tabindex="0" aria-label="Text track · 500 cases"><table>
+</tbody></table></div><p class="table-note">POSE: contact/action pose generation; MOVE: executed joint motion. The articulated baseline augments TabletopGen with Articraft. Articulated TASK measures goal attainment during execution with contact and base-drift checks; sustained or terminal goal holding is not required.</p><details class="construction-results"><summary>Text and Image tracks · construction quality</summary><p class="table-note">Pass rates (%) for binary metrics. LPIPS is lower-is-better; DINOv2 and CLIP report feature cosine similarity, higher-is-better. Bold follows the manuscript.</p><div class="result-table" role="region" tabindex="0" aria-label="Text track · 500 cases"><table>
 <caption>Text track · 500 cases</caption><thead><tr><th scope="col">Method</th>
 <th scope="col">CNT ↑</th>
 <th scope="col">REL ↑</th>
@@ -280,11 +287,20 @@
     </section>
     <!-- END PAPER RESULTS -->
 
-    <section id="interaction" class="interaction" aria-labelledby="interaction-title">
-      <div class="section-heading"><div><p class="eyebrow">06 / Interaction examples</p><h2 id="interaction-title">From placement to articulated motion.</h2></div></div>
-      <figure><a href="assets/interaction.webp" target="_blank" rel="noopener" aria-label="Open full-size interaction sequences"><img src="assets/interaction.webp" loading="lazy" alt="Successive frames showing a robot placing an object onto a tray and opening a hinged box."></a><figcaption>Qualitative simulation showcases: rigid-object pick and place, and hinged-box opening. Prepared visualizations illustrate the task families; benchmark pass rates require separate evaluation records.</figcaption></figure>
+    <section id="benchmark" class="section benchmark" aria-labelledby="benchmark-title">
+      <div class="section-heading"><div><p class="eyebrow">Evaluation protocol</p><h2 id="benchmark-title">Check the scene. Then try the task.</h2></div></div>
+      <div class="benchmark-intro"><p>TabletopAudit evaluates input fidelity, 3D quality, simulation validity, and embodied execution. Text and Image tracks share the same <strong>500 cases</strong> across <strong>9 domains</strong>.</p><p><strong>Embodied-100</strong> contains 60 rigid-object tasks and 40 articulated-object tasks. Evaluation distinguishes pass, fail, unknown, and inapplicable outcomes.</p></div>
+      <div class="audit-levels"><article><span>L1</span><h3>Input fidelity</h3><p>Objects, relations, placement, and attributes.</p></article><article><span>L2</span><h3>3D quality</h3><p>Collision, support, clearance, and appearance.</p></article><article><span>L3</span><h3>Simulation</h3><p>Loading, physics advancement, and stability.</p></article><article><span>L4</span><h3>Task execution</h3><p>Contact, planning, motion, and task completion.</p></article></div>
+      <details class="method-details"><summary>Explore the method overview <span aria-hidden="true">+</span></summary><figure><img src="assets/method.webp" width="2200" height="993" loading="lazy" alt="TACER method overview: specifications, hierarchical programs, construction and verification, and scene export."><figcaption>Hierarchical asset and scene programs with verification-guided repair.</figcaption></figure></details>
     </section>
   </main>
-  <footer><span class="wordmark">TACER<span aria-hidden="true">.</span></span><p>Anonymous supplementary demonstration</p><a href="vendor/three/LICENSE">Third-party license</a></footer>
+  <footer><a class="wordmark" href="#top">TACER<span aria-hidden="true">.</span></a><p>Anonymous supplementary material · Prepared scene and robot demonstrations</p><a href="#top">Back to top ↑</a></footer>
+  <dialog id="scene-dialog" aria-labelledby="scene-dialog-title">
+    <div class="scene-dialog-heading"><div><p class="eyebrow" id="scene-dialog-count">01 / 08 · Front view</p><h2 id="scene-dialog-title">Scene</h2><p id="scene-dialog-description"></p></div><button id="scene-dialog-close" class="button subtle" type="button">Close <span aria-hidden="true">×</span></button></div>
+    <div class="scene-inspector-toolbar"><div class="scene-navigation"><button type="button" id="scene-prev" aria-label="Previous scene">←</button><button type="button" id="scene-next" aria-label="Next scene">→</button></div><div class="scene-view-modes" role="group" aria-label="Scene display"><button type="button" id="scene-mode-3d" aria-pressed="true">3D scene</button><button type="button" id="scene-mode-render" aria-pressed="false">Reference render</button></div><div class="scene-zoom"><button type="button" id="scene-zoom-out" aria-label="Zoom out">−</button><button type="button" id="scene-zoom-in" aria-label="Zoom in">+</button><button type="button" id="scene-fit">Reset view</button></div></div>
+    <div id="scene-dialog-media" class="scene-image-viewport"><div id="scene-canvas-wrap" hidden></div><img id="scene-detail-image" alt=""><div id="scene-model-status" role="status" hidden><span id="scene-model-message">Loading 3D scene…</span><button type="button" id="scene-model-retry" class="button subtle" hidden>Try again</button></div></div>
+    <div class="scene-inspector-footer"><p class="scope-note" id="scene-interaction-hint">Drag to rotate · Scroll or pinch to zoom · Right-drag to pan</p><a id="scene-original" href="assets/scenes/kitchen-detail.webp" target="_blank" rel="noopener">Open reference image ↗</a></div>
+  </dialog>
+  <p class="sr-only" id="status" aria-live="polite"></p>
 </body>
 </html>

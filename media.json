@@ -1,0 +1,309 @@
+{
+  "version": 2,
+  "scene_presentation": "interactive_3d_with_reference",
+  "scenes": [
+    {
+      "model": {
+        "src": "assets/models/kitchen.glb",
+        "bytes": 19003212
+      },
+      "id": "kitchen",
+      "title": "Kitchen counter",
+      "description": "Appliances & tableware",
+      "poster": "assets/scenes/kitchen.webp",
+      "image": {
+        "src": "assets/scenes/kitchen-detail.webp",
+        "width": 1404,
+        "height": 666,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/dining.glb",
+        "bytes": 47021680
+      },
+      "id": "dining",
+      "title": "Dining table",
+      "description": "Dining & serving",
+      "poster": "assets/scenes/dining.webp",
+      "image": {
+        "src": "assets/scenes/dining-detail.webp",
+        "width": 1404,
+        "height": 991,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/bathroom.glb",
+        "bytes": 69279844
+      },
+      "id": "bathroom",
+      "title": "Bathroom vanity",
+      "description": "Personal-care essentials",
+      "poster": "assets/scenes/bathroom.webp",
+      "image": {
+        "src": "assets/scenes/bathroom-detail.webp",
+        "width": 1404,
+        "height": 805,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/dressing.glb",
+        "bytes": 7294024
+      },
+      "id": "dressing",
+      "title": "Dressing table",
+      "description": "Cosmetics & accessories",
+      "poster": "assets/scenes/dressing.webp",
+      "image": {
+        "src": "assets/scenes/dressing-detail.webp",
+        "width": 1404,
+        "height": 711,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/office.glb",
+        "bytes": 14139580
+      },
+      "id": "office",
+      "title": "Office desk",
+      "description": "Devices & desk essentials",
+      "poster": "assets/scenes/office.webp",
+      "image": {
+        "src": "assets/scenes/office-detail.webp",
+        "width": 1404,
+        "height": 909,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/gaming.glb",
+        "bytes": 2131260
+      },
+      "id": "gaming",
+      "title": "Gaming table",
+      "description": "Games & shared play",
+      "poster": "assets/scenes/gaming.webp",
+      "image": {
+        "src": "assets/scenes/gaming-detail.webp",
+        "width": 1404,
+        "height": 479,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/laboratory.glb",
+        "bytes": 4010880
+      },
+      "id": "laboratory",
+      "title": "Laboratory bench",
+      "description": "Instruments & glassware",
+      "poster": "assets/scenes/laboratory.webp",
+      "image": {
+        "src": "assets/scenes/laboratory-detail.webp",
+        "width": 1404,
+        "height": 537,
+        "view": "Front view"
+      }
+    },
+    {
+      "model": {
+        "src": "assets/models/workbench.glb",
+        "bytes": 7872172
+      },
+      "id": "workbench",
+      "title": "Workbench",
+      "description": "Tools & components",
+      "poster": "assets/scenes/workbench.webp",
+      "image": {
+        "src": "assets/scenes/workbench-detail.webp",
+        "width": 1404,
+        "height": 533,
+        "view": "Front view"
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "id": "pick",
+      "title": "Pick",
+      "ours": {
+        "poster": "assets/interactions/pick-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/pick-ours.mp4",
+          "duration": 9.867,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/pick-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/pick-other.mp4",
+          "duration": 9.867,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    },
+    {
+      "id": "place-into",
+      "title": "Place into",
+      "ours": {
+        "poster": "assets/interactions/place-into-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/place-into-ours.mp4",
+          "duration": 10.667,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/place-into-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/place-into-other.mp4",
+          "duration": 16.033,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    },
+    {
+      "id": "place-onto",
+      "title": "Place onto",
+      "ours": {
+        "poster": "assets/interactions/place-onto-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/place-onto-ours.mp4",
+          "duration": 15.067,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/place-onto-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/place-onto-other.mp4",
+          "duration": 15.067,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    },
+    {
+      "id": "rotate",
+      "title": "Rotate",
+      "ours": {
+        "poster": "assets/interactions/rotate-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/rotate-ours.mp4",
+          "duration": 4.0,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/rotate-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/rotate-other.mp4",
+          "duration": 4.0,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    },
+    {
+      "id": "slide",
+      "title": "Slide",
+      "ours": {
+        "poster": "assets/interactions/slide-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/slide-ours.mp4",
+          "duration": 8.333,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/slide-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/slide-other.mp4",
+          "duration": 8.333,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    },
+    {
+      "id": "open",
+      "title": "Open",
+      "ours": {
+        "poster": "assets/interactions/open-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/open-ours.mp4",
+          "duration": 8.667,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/open-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/open-other.mp4",
+          "duration": 8.667,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    },
+    {
+      "id": "press",
+      "title": "Press",
+      "ours": {
+        "poster": "assets/interactions/press-ours.webp",
+        "video": {
+          "src": "assets/videos/interactions/press-ours.mp4",
+          "duration": 8.0,
+          "width": 1280,
+          "height": 720
+        }
+      },
+      "other": {
+        "poster": "assets/interactions/press-other.webp",
+        "video": {
+          "src": "assets/videos/interactions/press-other.mp4",
+          "duration": 8.0,
+          "width": 1280,
+          "height": 720
+        }
+      }
+    }
+  ],
+  "film": {
+    "poster": "assets/demo-poster.webp",
+    "video": {
+      "src": "assets/videos/tacer-demo-71s.mp4",
+      "duration": 71.0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "scale": {
+    "poster": "assets/scale.webp",
+    "video": {
+      "src": "assets/videos/scene-scale.mp4",
+      "duration": 9.0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "complete": true
+}

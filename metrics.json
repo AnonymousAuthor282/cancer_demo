@@ -1,0 +1,1418 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-08",
+  "provenance": {
+    "main_source": "paper/iclr2027/tacer_iclr2027.tex",
+    "included_sections": [
+      "sections/introduction_new",
+      "sections/related_work",
+      "sections/method_new",
+      "sections/benchmark_new",
+      "sections/experiments",
+      "sections/conclusion",
+      "sections/statements",
+      "sections/appendix"
+    ],
+    "source_files": [
+      {
+        "path": "paper/iclr2027/tacer_iclr2027.tex",
+        "sha256": "328fd312fcb01e3180fabe5b39aa66c120eb7950241569d41c099ecd4670dd30"
+      },
+      {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "sha256": "f0bbd209c17f539b2395a50001db518a144eba86c4eaec549f55d492fec2e66c"
+      },
+      {
+        "path": "paper/iclr2027/sections/benchmark_new.tex",
+        "sha256": "e0985f063870228198cb6063a64c81b8ca462730ee43203ce867b0fe861734de"
+      },
+      {
+        "path": "paper/iclr2027/sections/method_new.tex",
+        "sha256": "cd1ed5f9437083e5dc7954d6915805f6bf9da1d486d64f83c8f8b226f7a4a039"
+      },
+      {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "sha256": "14e357de85fc375af875a3f3ca4701153181e8f813a2d27b5b47a41c42231ec2"
+      }
+    ],
+    "verification_scope": "Transcribed and checked against the active manuscript. Benchmark experiments were not rerun for the website.",
+    "public_source_policy": "Display source.public_label; repository-relative source paths are audit metadata, not page copy."
+  },
+  "highlights": [
+    {
+      "id": "rigid_task",
+      "title": "Rigid-object task success",
+      "value": 71.67,
+      "display": "71.67%",
+      "unit": "percent",
+      "direction": "higher",
+      "scope": "RigidManip-60",
+      "denominator": {
+        "value": 60,
+        "unit": "task cases",
+        "kind": "all assigned cases"
+      },
+      "baseline": {
+        "method": "TabletopGen",
+        "value": 20.0,
+        "display": "20.00%"
+      },
+      "delta": {
+        "value": 51.67,
+        "unit": "percentage points",
+        "display": "+51.67 pp"
+      },
+      "definition": "Cumulative TASK pass rate for Pick, Place-into, and Place-onto.",
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:sim_embodied_results",
+        "public_label": "Embodied-100 results · RigidManip-60"
+      },
+      "note": "Cumulative pass rate on 60 task cases; every preceding gate must pass."
+    },
+    {
+      "id": "articulated_task",
+      "title": "Articulated task success",
+      "value": 60.0,
+      "display": "60.00%",
+      "unit": "percent",
+      "direction": "higher",
+      "scope": "Articulation-40",
+      "denominator": {
+        "value": 40,
+        "unit": "task cases",
+        "kind": "all assigned cases"
+      },
+      "baseline": {
+        "method": "TabletopGen + Articraft",
+        "value": 5.0,
+        "display": "5.00%"
+      },
+      "delta": {
+        "value": 55.0,
+        "unit": "percentage points",
+        "display": "+55.00 pp"
+      },
+      "definition": "Cumulative TASK pass rate for Open, Press, Slide/Pull, and Rotate.",
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:sim_embodied_results",
+        "public_label": "Embodied-100 results · Articulation-40"
+      },
+      "note": "Goal attainment during execution with measured contact and base-drift checks; sustained or terminal goal holding is not required."
+    },
+    {
+      "id": "image_lpips",
+      "title": "Image similarity",
+      "value": 0.2589,
+      "display": "0.2589",
+      "unit": "LPIPS-VGG",
+      "direction": "lower",
+      "scope": "TabletopAudit · Image track · 500 cases",
+      "denominator": {
+        "value": null,
+        "unit": "cases with valid fixed-front-view evidence",
+        "kind": "valid-evidence mean",
+        "benchmark_cases": 500,
+        "reason": "The manuscript does not tabulate the number of valid appearance-metric cases."
+      },
+      "baseline": {
+        "method": "TabletopGen",
+        "value": 0.3896,
+        "display": "0.3896"
+      },
+      "delta": {
+        "value": -0.1307,
+        "unit": "LPIPS",
+        "display": "−0.1307"
+      },
+      "definition": "Mean LPIPS-VGG between the input image and fixed-front-view render, without best-view selection.",
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:image_results",
+        "public_label": "Image-track results · TabletopAudit"
+      },
+      "note": "Lower is better; this is an appearance metric, not a pass rate."
+    },
+    {
+      "id": "corpus_scenes",
+      "title": "Generated scenes",
+      "value": 11399,
+      "display": "11,399",
+      "unit": "scenes",
+      "direction": null,
+      "scope": "TACER-11K · 9 environments",
+      "denominator": {
+        "value": null,
+        "unit": "scenes",
+        "kind": "corpus count"
+      },
+      "baseline": null,
+      "delta": null,
+      "definition": "One record per accepted scene in TACER-11K.",
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "label": "tab:tacer11k_composition",
+        "public_label": "TACER-11K scene composition and complexity"
+      },
+      "note": "Corpus scale is distinct from the 500-case benchmark and the eight selected showcase scenes."
+    }
+  ],
+  "benchmark": {
+    "name": "TabletopAudit",
+    "cases": 500,
+    "environments": 9,
+    "mesa_task_derived_cases": 333,
+    "new_cases": 167,
+    "tracks": [
+      "Text",
+      "Image"
+    ],
+    "same_cases_across_input_tracks": true,
+    "levels": [
+      "Input Fidelity",
+      "3D Scene Quality",
+      "Simulation Validity",
+      "Embodied Execution"
+    ],
+    "source": {
+      "path": "paper/iclr2027/sections/benchmark_new.tex",
+      "label": "sec:benchmark",
+      "public_label": "TabletopAudit benchmark"
+    },
+    "domain_composition": [
+      {
+        "domain": "Bathroom vanity",
+        "cases": 56
+      },
+      {
+        "domain": "Coffee table",
+        "cases": 56
+      },
+      {
+        "domain": "Dining table",
+        "cases": 55
+      },
+      {
+        "domain": "Dressing table",
+        "cases": 56
+      },
+      {
+        "domain": "Gaming tabletop",
+        "cases": 55
+      },
+      {
+        "domain": "Kitchen counter",
+        "cases": 55
+      },
+      {
+        "domain": "Laboratory tabletop",
+        "cases": 56
+      },
+      {
+        "domain": "Office table",
+        "cases": 55
+      },
+      {
+        "domain": "Workshop tabletop",
+        "cases": 56
+      }
+    ],
+    "domain_source": {
+      "path": "paper/iclr2027/sections/appendix.tex",
+      "label": "tab:tabletopaudit_composition",
+      "public_label": "TabletopAudit-500 composition"
+    },
+    "embodied": {
+      "cases": 100,
+      "rigid_cases": 60,
+      "articulated_cases": 40,
+      "disjoint_subsets": true,
+      "domain_balanced": false,
+      "task_families": [
+        {
+          "task": "Pick",
+          "cases": 20,
+          "subset": "RigidManip-60"
+        },
+        {
+          "task": "Place-into",
+          "cases": 20,
+          "subset": "RigidManip-60"
+        },
+        {
+          "task": "Place-onto",
+          "cases": 20,
+          "subset": "RigidManip-60"
+        },
+        {
+          "task": "Open",
+          "cases": 20,
+          "subset": "Articulation-40"
+        },
+        {
+          "task": "Press",
+          "cases": 8,
+          "subset": "Articulation-40"
+        },
+        {
+          "task": "Slide/Pull",
+          "cases": 8,
+          "subset": "Articulation-40"
+        },
+        {
+          "task": "Rotate",
+          "cases": 4,
+          "subset": "Articulation-40"
+        }
+      ],
+      "source": {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "label": "fig:embodied100_composition",
+        "public_label": "Task-family composition of Embodied-100"
+      }
+    }
+  },
+  "corpus": {
+    "name": "TACER-11K",
+    "scenes": 11399,
+    "environments": 9,
+    "interactive_object_instances": 50114,
+    "instance_source": {
+      "path": "paper/iclr2027/sections/method_new.tex",
+      "label": "sec:method_dataset",
+      "public_label": "TACER-11K dataset"
+    },
+    "mean_final_objects_per_scene": 12.5,
+    "median_final_objects_per_scene": 11,
+    "final_objects_range": [
+      5,
+      29
+    ],
+    "mean_interactive_objects_per_scene": 4.4,
+    "median_interactive_objects_per_scene": 5,
+    "interactive_objects_range": [
+      1,
+      6
+    ],
+    "domain_composition": [
+      {
+        "domain": "Bathroom vanity",
+        "scenes": 1612
+      },
+      {
+        "domain": "Workshop tabletop",
+        "scenes": 1600
+      },
+      {
+        "domain": "Laboratory tabletop",
+        "scenes": 1500
+      },
+      {
+        "domain": "Coffee table",
+        "scenes": 1419
+      },
+      {
+        "domain": "Dressing table",
+        "scenes": 1378
+      },
+      {
+        "domain": "Gaming tabletop",
+        "scenes": 1200
+      },
+      {
+        "domain": "Kitchen counter",
+        "scenes": 1124
+      },
+      {
+        "domain": "Office table",
+        "scenes": 820
+      },
+      {
+        "domain": "Dining table",
+        "scenes": 746
+      }
+    ],
+    "source": {
+      "path": "paper/iclr2027/sections/appendix.tex",
+      "label": "tab:tacer11k_composition",
+      "public_label": "TACER-11K scene composition and complexity"
+    },
+    "note": "Interactive-object instances count placements in final scenes, not distinct asset identities or successful robot interactions."
+  },
+  "metric_definitions": {
+    "CNT": {
+      "definition": "Count requirements",
+      "aggregation_unit": "requirements",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "REL": {
+      "definition": "Spatial relation requirements",
+      "aggregation_unit": "requirements",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "PLC": {
+      "definition": "Support and containment placement requirements",
+      "aggregation_unit": "requirements",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "ATR": {
+      "definition": "Visible attribute requirements",
+      "aggregation_unit": "requirements",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "COL": {
+      "definition": "Collision avoidance",
+      "aggregation_unit": "scenes",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "SUP": {
+      "definition": "Static mesh support",
+      "aggregation_unit": "submitted objects",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "EDGE": {
+      "definition": "Workspace boundary",
+      "aggregation_unit": "submitted objects",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "CLR": {
+      "definition": "Geometric access clearance",
+      "aggregation_unit": "access requirements",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "IMG-LPIPS": {
+      "definition": "Fixed-front-view LPIPS-VGG",
+      "aggregation_unit": "valid front-view cases",
+      "direction": "lower",
+      "unit": "LPIPS"
+    },
+    "IMG-DINO": {
+      "definition": "DINOv2 feature cosine similarity",
+      "aggregation_unit": "valid front-view cases",
+      "direction": "higher",
+      "unit": "cosine similarity"
+    },
+    "IMG-CLIP": {
+      "definition": "CLIP feature cosine similarity",
+      "aggregation_unit": "valid front-view cases",
+      "direction": "higher",
+      "unit": "cosine similarity"
+    },
+    "LOAD": {
+      "definition": "Scene, robot, target, and required observations instantiate",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "PHYS": {
+      "definition": "At least one zero-action physics step completes",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "STAB": {
+      "definition": "Target settling under the frozen task profile",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "GRASP": {
+      "definition": "At least one target-OBB grasp fits the gripper",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "POSE": {
+      "definition": "Valid contact/action definition follows joint axis and task goal",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "REACH": {
+      "definition": "Candidate passes collision-aware inverse kinematics",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "PLAN": {
+      "definition": "Surviving candidate has a planned task trajectory",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "PICK": {
+      "definition": "Physical contact, grasp, lift, and hold checks pass",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "MOVE": {
+      "definition": "Executed joint motion reaches prescribed goal tolerance",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    },
+    "TASK": {
+      "definition": "All preceding gates and task-specific completion checks pass",
+      "aggregation_unit": "task cases",
+      "direction": "higher",
+      "unit": "percent"
+    }
+  },
+  "scoring": {
+    "source": {
+      "path": "paper/iclr2027/sections/appendix.tex",
+      "label": "app:scoring",
+      "public_label": "Scoring and aggregation"
+    },
+    "pass_rate": "pass / (pass + fail + unknown), excluding inapplicable units",
+    "unknown_in_denominator": true,
+    "overall_score": null,
+    "overall_score_note": "Tracks, domains, and rigid/articulated capabilities remain separate; the manuscript defines no overall score.",
+    "appearance_aggregation": "Mean over cases with valid fixed-front-view evidence.",
+    "coverage_reported_in_main_tables": false,
+    "missing_status_policy": {
+      "N/S": "unsupported method capability; never convert to zero",
+      "unknown": "applicable case or unit without sufficient evidence; remains in pass-rate denominator",
+      "inapplicable": "excluded from the metric denominator",
+      "TBD": "unreported/pending; never convert to a number"
+    },
+    "status_placeholders_present_in_active_main_tables": false
+  },
+  "tables": [
+    {
+      "id": "rigid",
+      "title": "RigidManip-60",
+      "benchmark_cases": 60,
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:sim_embodied_results",
+        "public_label": "RigidManip-60 results · TabletopAudit"
+      },
+      "panel": "a",
+      "cumulative": true,
+      "columns": [
+        "LOAD",
+        "PHYS",
+        "STAB",
+        "GRASP",
+        "REACH",
+        "PLAN",
+        "PICK",
+        "TASK"
+      ],
+      "rows": [
+        {
+          "method": "TabletopGen",
+          "ours": false,
+          "metrics": {
+            "LOAD": {
+              "value": 81.67,
+              "display": "81.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PHYS": {
+              "value": 63.33,
+              "display": "63.33",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "STAB": {
+              "value": 56.67,
+              "display": "56.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "GRASP": {
+              "value": 46.67,
+              "display": "46.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REACH": {
+              "value": 40.0,
+              "display": "40.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLAN": {
+              "value": 33.33,
+              "display": "33.33",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PICK": {
+              "value": 23.33,
+              "display": "23.33",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "TASK": {
+              "value": 20.0,
+              "display": "20.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "TACER",
+          "ours": true,
+          "metrics": {
+            "LOAD": {
+              "value": 100.0,
+              "display": "100.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PHYS": {
+              "value": 96.67,
+              "display": "96.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "STAB": {
+              "value": 93.33,
+              "display": "93.33",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "GRASP": {
+              "value": 90.0,
+              "display": "90.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "REACH": {
+              "value": 86.67,
+              "display": "86.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PLAN": {
+              "value": 85.0,
+              "display": "85.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PICK": {
+              "value": 78.33,
+              "display": "78.33",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "TASK": {
+              "value": 71.67,
+              "display": "71.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Cumulative pass rate on 60 task cases; every preceding gate must pass.",
+        "STAB checks target-level settling, not scene-wide dynamic stability."
+      ],
+      "coverage": null,
+      "coverage_status": "not separately tabulated in the main result tables"
+    },
+    {
+      "id": "articulated",
+      "title": "Articulation-40",
+      "benchmark_cases": 40,
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:sim_embodied_results",
+        "public_label": "Articulation-40 results · TabletopAudit"
+      },
+      "panel": "b",
+      "cumulative": true,
+      "columns": [
+        "LOAD",
+        "PHYS",
+        "STAB",
+        "POSE",
+        "REACH",
+        "PLAN",
+        "MOVE",
+        "TASK"
+      ],
+      "rows": [
+        {
+          "method": "TabletopGen + Articraft",
+          "ours": false,
+          "metrics": {
+            "LOAD": {
+              "value": 87.5,
+              "display": "87.50",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PHYS": {
+              "value": 67.5,
+              "display": "67.50",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "STAB": {
+              "value": 32.5,
+              "display": "32.50",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "POSE": {
+              "value": 25.0,
+              "display": "25.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REACH": {
+              "value": 20.0,
+              "display": "20.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLAN": {
+              "value": 10.0,
+              "display": "10.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "MOVE": {
+              "value": 5.0,
+              "display": "5.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "TASK": {
+              "value": 5.0,
+              "display": "5.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "TACER",
+          "ours": true,
+          "metrics": {
+            "LOAD": {
+              "value": 100.0,
+              "display": "100.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PHYS": {
+              "value": 95.0,
+              "display": "95.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "STAB": {
+              "value": 85.0,
+              "display": "85.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "POSE": {
+              "value": 77.5,
+              "display": "77.50",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "REACH": {
+              "value": 72.5,
+              "display": "72.50",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PLAN": {
+              "value": 70.0,
+              "display": "70.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "MOVE": {
+              "value": 62.5,
+              "display": "62.50",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "TASK": {
+              "value": 60.0,
+              "display": "60.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Goal attainment during execution with measured contact and base-drift checks; sustained or terminal goal holding is not required.",
+        "STAB checks target-level settling, not scene-wide dynamic stability."
+      ],
+      "coverage": null,
+      "coverage_status": "not separately tabulated in the main result tables"
+    },
+    {
+      "id": "text",
+      "title": "Text track",
+      "benchmark_cases": 500,
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:text_results",
+        "public_label": "Text track results · TabletopAudit"
+      },
+      "panel": null,
+      "cumulative": false,
+      "columns": [
+        "CNT",
+        "REL",
+        "PLC",
+        "ATR",
+        "COL",
+        "SUP",
+        "EDGE",
+        "CLR"
+      ],
+      "rows": [
+        {
+          "method": "Holodeck-table",
+          "ours": false,
+          "metrics": {
+            "CNT": {
+              "value": 18.43,
+              "display": "18.43",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REL": {
+              "value": 7.2,
+              "display": "7.20",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLC": {
+              "value": 17.98,
+              "display": "17.98",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "ATR": {
+              "value": 19.76,
+              "display": "19.76",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "COL": {
+              "value": 97.2,
+              "display": "97.20",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "SUP": {
+              "value": 94.87,
+              "display": "94.87",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "EDGE": {
+              "value": 98.71,
+              "display": "98.71",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "CLR": {
+              "value": 58.4,
+              "display": "58.40",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "MesaTask",
+          "ours": false,
+          "metrics": {
+            "CNT": {
+              "value": 23.83,
+              "display": "23.83",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REL": {
+              "value": 9.8,
+              "display": "9.80",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLC": {
+              "value": 21.95,
+              "display": "21.95",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "ATR": {
+              "value": 22.86,
+              "display": "22.86",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "COL": {
+              "value": 9.4,
+              "display": "9.40",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "SUP": {
+              "value": 83.99,
+              "display": "83.99",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "EDGE": {
+              "value": 97.49,
+              "display": "97.49",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "CLR": {
+              "value": 10.0,
+              "display": "10.00",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "TabletopGen",
+          "ours": false,
+          "metrics": {
+            "CNT": {
+              "value": 67.8,
+              "display": "67.80",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REL": {
+              "value": 24.2,
+              "display": "24.20",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLC": {
+              "value": 26.14,
+              "display": "26.14",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "ATR": {
+              "value": 56.68,
+              "display": "56.68",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "COL": {
+              "value": 67.6,
+              "display": "67.60",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "SUP": {
+              "value": 99.05,
+              "display": "99.05",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "EDGE": {
+              "value": 96.54,
+              "display": "96.54",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "CLR": {
+              "value": 63.6,
+              "display": "63.60",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "TACER",
+          "ours": true,
+          "metrics": {
+            "CNT": {
+              "value": 99.86,
+              "display": "99.86",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "REL": {
+              "value": 78.65,
+              "display": "78.65",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PLC": {
+              "value": 95.82,
+              "display": "95.82",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "ATR": {
+              "value": 68.35,
+              "display": "68.35",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "COL": {
+              "value": 99.4,
+              "display": "99.40",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "SUP": {
+              "value": 98.65,
+              "display": "98.65",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "EDGE": {
+              "value": 98.61,
+              "display": "98.61",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "CLR": {
+              "value": 75.8,
+              "display": "75.80",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Binary pass rates include applicable unknown outcomes in the denominator.",
+        "The number of benchmark cases is not the denominator of every metric."
+      ],
+      "coverage": null,
+      "coverage_status": "not separately tabulated in the main result tables"
+    },
+    {
+      "id": "image",
+      "title": "Image track",
+      "benchmark_cases": 500,
+      "status": "reported_in_current_manuscript",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "tab:image_results",
+        "public_label": "Image track results · TabletopAudit"
+      },
+      "panel": null,
+      "cumulative": false,
+      "columns": [
+        "CNT",
+        "REL",
+        "PLC",
+        "ATR",
+        "COL",
+        "SUP",
+        "IMG-LPIPS",
+        "IMG-DINO",
+        "IMG-CLIP"
+      ],
+      "rows": [
+        {
+          "method": "MIDI",
+          "ours": false,
+          "metrics": {
+            "CNT": {
+              "value": 49.29,
+              "display": "49.29",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REL": {
+              "value": 20.55,
+              "display": "20.55",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLC": {
+              "value": 12.05,
+              "display": "12.05",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "ATR": {
+              "value": 28.68,
+              "display": "28.68",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "COL": {
+              "value": 44.8,
+              "display": "44.80",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "SUP": {
+              "value": 19.29,
+              "display": "19.29",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-LPIPS": {
+              "value": 0.4126,
+              "display": "0.4126",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-DINO": {
+              "value": 0.6542,
+              "display": "0.6542",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-CLIP": {
+              "value": 0.8741,
+              "display": "0.8741",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "SAM3D",
+          "ours": false,
+          "metrics": {
+            "CNT": {
+              "value": 98.95,
+              "display": "98.95",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REL": {
+              "value": 63.25,
+              "display": "63.25",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLC": {
+              "value": 53.25,
+              "display": "53.25",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "ATR": {
+              "value": 60.13,
+              "display": "60.13",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "COL": {
+              "value": 81.2,
+              "display": "81.20",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "SUP": {
+              "value": 99.35,
+              "display": "99.35",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-LPIPS": {
+              "value": 0.3594,
+              "display": "0.3594",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-DINO": {
+              "value": 0.6063,
+              "display": "0.6063",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-CLIP": {
+              "value": 0.7684,
+              "display": "0.7684",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "TabletopGen",
+          "ours": false,
+          "metrics": {
+            "CNT": {
+              "value": 76.42,
+              "display": "76.42",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "REL": {
+              "value": 31.6,
+              "display": "31.60",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "PLC": {
+              "value": 34.94,
+              "display": "34.94",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "ATR": {
+              "value": 61.83,
+              "display": "61.83",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "COL": {
+              "value": 74.8,
+              "display": "74.80",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "SUP": {
+              "value": 99.23,
+              "display": "99.23",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-LPIPS": {
+              "value": 0.3896,
+              "display": "0.3896",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-DINO": {
+              "value": 0.6463,
+              "display": "0.6463",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            },
+            "IMG-CLIP": {
+              "value": 0.8982,
+              "display": "0.8982",
+              "status": "reported_in_current_manuscript",
+              "best_reported": false
+            }
+          }
+        },
+        {
+          "method": "TACER",
+          "ours": true,
+          "metrics": {
+            "CNT": {
+              "value": 99.67,
+              "display": "99.67",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "REL": {
+              "value": 82.36,
+              "display": "82.36",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "PLC": {
+              "value": 97.88,
+              "display": "97.88",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "ATR": {
+              "value": 84.62,
+              "display": "84.62",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "COL": {
+              "value": 98.8,
+              "display": "98.80",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "SUP": {
+              "value": 99.55,
+              "display": "99.55",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "IMG-LPIPS": {
+              "value": 0.2589,
+              "display": "0.2589",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "IMG-DINO": {
+              "value": 0.8466,
+              "display": "0.8466",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            },
+            "IMG-CLIP": {
+              "value": 0.9199,
+              "display": "0.9199",
+              "status": "reported_in_current_manuscript",
+              "best_reported": true
+            }
+          }
+        }
+      ],
+      "notes": [
+        "Binary pass rates include applicable unknown outcomes in the denominator.",
+        "Appearance metrics average valid fixed-front-view cases without best-view selection."
+      ],
+      "coverage": null,
+      "coverage_status": "not separately tabulated in the main result tables"
+    }
+  ],
+  "method_copy": {
+    "summary": "TACER turns images or text into interactive tabletop scenes through hierarchical asset and scene programs, with verification-guided repair.",
+    "steps": [
+      {
+        "title": "Understand the scene",
+        "text": "Identify objects, support surfaces, and spatial relations."
+      },
+      {
+        "title": "Build the assets",
+        "text": "Construct geometry and physical representations, including joints for articulated objects."
+      },
+      {
+        "title": "Assemble the scene",
+        "text": "Place assets in dependency order using a scene-level program."
+      },
+      {
+        "title": "Verify and repair",
+        "text": "Check relations, physical stability, and motion clearance; revise and replay the responsible code."
+      }
+    ],
+    "output": "Executable programs, 3D scenes, and verification evidence.",
+    "source": {
+      "path": "paper/iclr2027/sections/method_new.tex",
+      "label": "fig:tacer_pipeline",
+      "public_label": "TACER method overview"
+    },
+    "note": "Construction checks and independent benchmark evaluation are distinct."
+  },
+  "downstream": {
+    "priority": "secondary",
+    "task": "Screwdriver-to-tray",
+    "successful_demonstrations": 303,
+    "clean_training_episodes": 232,
+    "recovery_training_episodes": 51,
+    "evaluation_instances": 10,
+    "pi_0_5": {
+      "original_successes": 0,
+      "fine_tuned_successes": 5,
+      "original_lifts": 4,
+      "fine_tuned_lifts": 8,
+      "denominator": 10
+    },
+    "bc_rnn": {
+      "clean_finetuned_successes": 0,
+      "recovery_finetuned_successes": 1,
+      "denominator": 10
+    },
+    "source": {
+      "path": "paper/iclr2027/sections/experiments.tex",
+      "label": "tab:policy_results",
+      "public_label": "Task-specific policy learning results"
+    },
+    "demonstration_source": {
+      "path": "paper/iclr2027/sections/appendix.tex",
+      "label": "tab:policy_dataset_stats",
+      "public_label": "Demonstration data splits"
+    },
+    "note": "Ten held-out augmented instances; base templates may appear in training. Policy evaluators differ and results must not be pooled. These results support task-specific adaptation, not general real-robot transfer."
+  },
+  "limitations": [
+    {
+      "id": "qualitative_vs_quantitative",
+      "text": "The selected scenes and operation videos are qualitative examples; the rates above come from the separate TabletopAudit benchmark.",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "sec:exp_embodied",
+        "public_label": "Simulation validity and embodied execution"
+      }
+    },
+    {
+      "id": "target_stability",
+      "text": "STAB evaluates target-level settling under a fixed task profile. Non-target clutter is rendered but excluded from collision in that mode.",
+      "source": {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "label": "app:embodied100",
+        "public_label": "Simulator and target-stability protocol"
+      }
+    },
+    {
+      "id": "rigid_collision_scope",
+      "text": "In physical PICK replay, clutter collisions are disabled; obstacle-collision evidence comes from planning.",
+      "source": {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "label": "app:embodied100",
+        "public_label": "RigidManip-60 protocol"
+      }
+    },
+    {
+      "id": "articulated_goal",
+      "text": "Goal attainment during execution with measured contact and base-drift checks; sustained or terminal goal holding is not required.",
+      "source": {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "label": "app:embodied100",
+        "public_label": "Articulation-40 protocol"
+      }
+    },
+    {
+      "id": "missing_evidence",
+      "text": "Applicable unknown outcomes remain in pass-rate denominators. Main result tables do not separately tabulate coverage or valid appearance-case counts.",
+      "source": {
+        "path": "paper/iclr2027/sections/appendix.tex",
+        "label": "app:scoring",
+        "public_label": "Scoring and aggregation"
+      }
+    },
+    {
+      "id": "no_uncertainty_claim",
+      "text": "The active result tables report point estimates without confidence intervals or repeated-run variation. No statistical-significance claim is made here.",
+      "source": {
+        "path": "paper/iclr2027/sections/experiments.tex",
+        "label": "sec:experiments",
+        "public_label": "Experiments"
+      }
+    },
+    {
+      "id": "scope",
+      "text": "Complex mechanisms, deformable objects, and real-robot transfer remain future work.",
+      "source": {
+        "path": "paper/iclr2027/sections/conclusion.tex",
+        "label": "sec:conclusion",
+        "public_label": "Conclusion"
+      }
+    }
+  ]
+}
