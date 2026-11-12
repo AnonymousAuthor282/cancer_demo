@@ -29,7 +29,7 @@
 
     <section id="film" class="film-section" aria-label="TACER overview film">
       <div class="film-shell" id="film-media"><img src="assets/demo-poster.webp" width="1920" height="1080" alt="Four generated tabletop scenes: kitchen, dining table, laboratory, and workbench." fetchpriority="high"></div>
-      <div class="film-caption"><p><strong>TACER</strong><span>From scene construction to interaction</span></p><span id="film-duration">Selected scene overview</span></div>
+      <div class="film-caption"><p><strong>TACER</strong><span>From scene construction to interaction · <a href="#interaction">Full robot examples below</a></span></p><span id="film-duration">Selected scene overview</span></div>
     </section>
 
     <section class="method-strip" aria-label="Method overview">
@@ -94,11 +94,11 @@
         <button type="button" data-task="press" aria-pressed="false">Press</button>
       </div>
       <div class="comparison-grid">
-        <article class="comparison-card"><div class="comparison-heading"><h3>TACER</h3><span class="outcome success">Successful run</span></div><div class="task-media" id="task-ours"><img src="assets/interactions/pick-ours.webp" width="960" height="540" loading="lazy" alt="TACER pick task in robot simulation."></div></article>
-        <article class="comparison-card"><div class="comparison-heading"><h3>Other method</h3><span class="outcome">Failed run</span></div><div class="task-media" id="task-other"><img src="assets/interactions/pick-other.webp" width="960" height="540" loading="lazy" alt="Other method pick task in robot simulation."></div></article>
+        <article class="comparison-card"><div class="comparison-heading"><h3>TACER</h3><span id="task-ours-outcome" class="outcome success">Successful run</span></div><div class="task-media" id="task-ours"><img src="assets/interactions/pick-ours.webp" width="960" height="540" loading="lazy" alt="TACER pick task in robot simulation."></div></article>
+        <article class="comparison-card"><div class="comparison-heading"><h3>Other method</h3><span id="task-other-outcome" class="outcome">Failed run</span></div><div class="task-media" id="task-other"><img src="assets/interactions/pick-other.webp" width="960" height="540" loading="lazy" alt="Other method pick task in robot simulation."></div></article>
       </div>
       <div class="comparison-controls"><p id="task-description">Pick · Grasp and lift the target object.</p><button id="replay-pair" type="button" class="button subtle" hidden>Play both clips <span aria-hidden="true">↻</span></button></div>
-      <p class="scope-note">Selected qualitative examples. Runs can differ in timing and duration; the comparison replays each original sequence. Method identities for the supplied failure clips were not specified. Benchmark success rates are reported separately below.</p>
+      <p class="scope-note" id="task-scope">Selected qualitative examples. Timing and duration can differ. The other method is unspecified. Benchmark success rates are reported separately below.</p>
       <noscript><p class="scope-note">Enable JavaScript to switch tasks and play the manipulation videos.</p></noscript>
     </section>
 

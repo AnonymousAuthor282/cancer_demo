@@ -5,7 +5,7 @@
     {
       "model": {
         "src": "assets/models/kitchen.glb",
-        "bytes": 19003212
+        "bytes": 26696744
       },
       "id": "kitchen",
       "title": "Kitchen counter",
@@ -13,9 +13,9 @@
       "poster": "assets/scenes/kitchen.webp",
       "image": {
         "src": "assets/scenes/kitchen-detail.webp",
-        "width": 1404,
-        "height": 666,
-        "view": "Front view"
+        "width": 1828,
+        "height": 1132,
+        "view": "Three-quarter view"
       }
     },
     {
@@ -29,9 +29,9 @@
       "poster": "assets/scenes/dining.webp",
       "image": {
         "src": "assets/scenes/dining-detail.webp",
-        "width": 1404,
-        "height": 991,
-        "view": "Front view"
+        "width": 1820,
+        "height": 1173,
+        "view": "Three-quarter view"
       }
     },
     {
@@ -45,9 +45,9 @@
       "poster": "assets/scenes/bathroom.webp",
       "image": {
         "src": "assets/scenes/bathroom-detail.webp",
-        "width": 1404,
-        "height": 805,
-        "view": "Front view"
+        "width": 1828,
+        "height": 1141,
+        "view": "Three-quarter view"
       }
     },
     {
@@ -61,15 +61,15 @@
       "poster": "assets/scenes/dressing.webp",
       "image": {
         "src": "assets/scenes/dressing-detail.webp",
-        "width": 1404,
-        "height": 711,
-        "view": "Front view"
+        "width": 1600,
+        "height": 1095,
+        "view": "Three-quarter view"
       }
     },
     {
       "model": {
         "src": "assets/models/office.glb",
-        "bytes": 14139580
+        "bytes": 15104740
       },
       "id": "office",
       "title": "Office desk",
@@ -77,15 +77,15 @@
       "poster": "assets/scenes/office.webp",
       "image": {
         "src": "assets/scenes/office-detail.webp",
-        "width": 1404,
-        "height": 909,
-        "view": "Front view"
+        "width": 1556,
+        "height": 1138,
+        "view": "Three-quarter view"
       }
     },
     {
       "model": {
         "src": "assets/models/gaming.glb",
-        "bytes": 2131260
+        "bytes": 4082712
       },
       "id": "gaming",
       "title": "Gaming table",
@@ -93,15 +93,15 @@
       "poster": "assets/scenes/gaming.webp",
       "image": {
         "src": "assets/scenes/gaming-detail.webp",
-        "width": 1404,
-        "height": 479,
-        "view": "Front view"
+        "width": 1828,
+        "height": 1008,
+        "view": "Three-quarter view"
       }
     },
     {
       "model": {
         "src": "assets/models/laboratory.glb",
-        "bytes": 4010880
+        "bytes": 8533064
       },
       "id": "laboratory",
       "title": "Laboratory bench",
@@ -109,9 +109,9 @@
       "poster": "assets/scenes/laboratory.webp",
       "image": {
         "src": "assets/scenes/laboratory-detail.webp",
-        "width": 1404,
-        "height": 537,
-        "view": "Front view"
+        "width": 1828,
+        "height": 1008,
+        "view": "Three-quarter view"
       }
     },
     {
@@ -125,9 +125,9 @@
       "poster": "assets/scenes/workbench.webp",
       "image": {
         "src": "assets/scenes/workbench-detail.webp",
-        "width": 1404,
-        "height": 533,
-        "view": "Front view"
+        "width": 1828,
+        "height": 1032,
+        "view": "Three-quarter view"
       }
     }
   ],
@@ -157,11 +157,12 @@
     {
       "id": "place-into",
       "title": "Place into",
+      "updated_example": true,
       "ours": {
         "poster": "assets/interactions/place-into-ours.webp",
         "video": {
           "src": "assets/videos/interactions/place-into-ours.mp4",
-          "duration": 10.667,
+          "duration": 33.6,
           "width": 1280,
           "height": 720
         }
@@ -179,11 +180,12 @@
     {
       "id": "place-onto",
       "title": "Place onto",
+      "updated_example": true,
       "ours": {
         "poster": "assets/interactions/place-onto-ours.webp",
         "video": {
           "src": "assets/videos/interactions/place-onto-ours.mp4",
-          "duration": 15.067,
+          "duration": 47.08,
           "width": 1280,
           "height": 720
         }
@@ -245,11 +247,12 @@
     {
       "id": "open",
       "title": "Open",
+      "updated_example": true,
       "ours": {
         "poster": "assets/interactions/open-ours.webp",
         "video": {
           "src": "assets/videos/interactions/open-ours.mp4",
-          "duration": 8.667,
+          "duration": 25.68,
           "width": 1280,
           "height": 720
         }

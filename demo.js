@@ -114,7 +114,7 @@ function showSceneReference() {
   $('scene-mode-render').setAttribute('aria-pressed', 'true');
   $('scene-canvas-wrap').hidden = true;
   $('scene-detail-image').hidden = false;
-  $('scene-interaction-hint').textContent = 'Approved front-view reference render';
+  $('scene-interaction-hint').textContent = 'Reference render';
   setModelStatus('');
 }
 function selectScene(index) {
@@ -124,7 +124,7 @@ function selectScene(index) {
   $('scene-dialog-description').textContent = scene.description;
   $('scene-dialog-count').textContent = `${String(selectedScene + 1).padStart(2, '0')} / 08 · Scene explorer`;
   $('scene-detail-image').src = safeAsset(scene.image.src);
-  $('scene-detail-image').alt = `${scene.title}, approved front-view render.`;
+  $('scene-detail-image').alt = `${scene.title}, reference render.`;
   $('scene-original').href = safeAsset(scene.image.src);
   if (sceneMode === '3d') showSceneModel(); else showSceneReference();
 }
@@ -213,6 +213,11 @@ function showTask(id, report = true) {
     }
   }
   $('task-description').textContent = `${task.title} · ${descriptions[id]}`;
+  $('task-ours-outcome').textContent = task.updated_example ? 'Updated run' : 'Successful run';
+  $('task-other-outcome').textContent = task.updated_example ? 'Earlier example' : 'Failed run';
+  $('task-scope').textContent = task.updated_example
+    ? 'The updated TACER clip and the earlier example are separate recordings. Benchmark success rates are reported separately below.'
+    : 'Selected qualitative examples. Timing and duration can differ. The other method is unspecified. Benchmark success rates are reported separately below.';
   $('replay-pair').hidden = !(task.ours.video && task.other.video);
   $('replay-pair').disabled = false;
   if (report) announce(`${task.title} examples selected.`);
