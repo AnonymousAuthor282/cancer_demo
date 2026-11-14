@@ -5,7 +5,7 @@
     {
       "model": {
         "src": "assets/models/kitchen.glb",
-        "bytes": 26696744
+        "bytes": 26813564
       },
       "id": "kitchen",
       "title": "Kitchen counter",
@@ -21,7 +21,7 @@
     {
       "model": {
         "src": "assets/models/dining.glb",
-        "bytes": 47021680
+        "bytes": 47022064
       },
       "id": "dining",
       "title": "Dining table",
@@ -37,7 +37,7 @@
     {
       "model": {
         "src": "assets/models/bathroom.glb",
-        "bytes": 69279844
+        "bytes": 69279964
       },
       "id": "bathroom",
       "title": "Bathroom vanity",
@@ -46,14 +46,14 @@
       "image": {
         "src": "assets/scenes/bathroom-detail.webp",
         "width": 1828,
-        "height": 1141,
+        "height": 1140,
         "view": "Three-quarter view"
       }
     },
     {
       "model": {
         "src": "assets/models/dressing.glb",
-        "bytes": 7294024
+        "bytes": 7294172
       },
       "id": "dressing",
       "title": "Dressing table",
@@ -85,7 +85,7 @@
     {
       "model": {
         "src": "assets/models/gaming.glb",
-        "bytes": 4082712
+        "bytes": 4082904
       },
       "id": "gaming",
       "title": "Gaming table",
@@ -101,7 +101,7 @@
     {
       "model": {
         "src": "assets/models/laboratory.glb",
-        "bytes": 8533064
+        "bytes": 8954216
       },
       "id": "laboratory",
       "title": "Laboratory bench",
