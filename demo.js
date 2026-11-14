@@ -27,11 +27,11 @@ function makeVideo(asset, poster, label, { loop = false } = {}) {
   });
   return video;
 }
-function videoCover(video, posterPath, label, title) {
+function videoCover(video, posterPath, label, title, { feature = true } = {}) {
   video.tabIndex = -1;
   const cover = document.createElement('button');
   cover.type = 'button';
-  cover.className = 'task-video-cover feature-video-cover';
+  cover.className = feature ? 'task-video-cover feature-video-cover' : 'task-video-cover';
   cover.setAttribute('aria-label', `Play ${label}`);
   const poster = document.createElement('img');
   poster.src = safeAsset(posterPath);
@@ -44,7 +44,12 @@ function videoCover(video, posterPath, label, title) {
     loadVideo(video);
     video.play().catch(() => announce(`${label} could not start. Please retry.`));
   });
-  video.addEventListener('play', () => { cover.hidden = true; video.removeAttribute('tabindex'); });
+  video.addEventListener('play', () => {
+    const moveFocus = document.activeElement === cover;
+    cover.hidden = true;
+    video.removeAttribute('tabindex');
+    if (moveFocus) video.focus({ preventScroll: true });
+  });
   return cover;
 }
 function loadVideo(video) {
@@ -215,9 +220,6 @@ function showTask(id, report = true) {
   $('task-description').textContent = `${task.title} · ${descriptions[id]}`;
   $('task-ours-outcome').textContent = task.updated_example ? 'Updated run' : 'Successful run';
   $('task-other-outcome').textContent = task.updated_example ? 'Earlier example' : 'Failed run';
-  $('task-scope').textContent = task.updated_example
-    ? 'The updated TACER clip and the earlier example are separate recordings. Benchmark success rates are reported separately below.'
-    : 'Selected qualitative examples. Timing and duration can differ. The other method is unspecified. Benchmark success rates are reported separately below.';
   $('replay-pair').hidden = !(task.ours.video && task.other.video);
   $('replay-pair').disabled = false;
   if (report) announce(`${task.title} examples selected.`);
@@ -246,7 +248,7 @@ function readyToPlay(video) {
 }
 $('replay-pair').addEventListener('click', async () => {
   const version = taskVersion;
-  const videos = [...document.querySelectorAll('.task-media video')];
+  const videos = [...document.querySelectorAll('#interaction .task-media video')];
   $('replay-pair').disabled = true;
   try {
     await Promise.all(videos.map(readyToPlay));
@@ -323,6 +325,14 @@ async function enhanceResults() {
 }
 installMedia().catch(() => announce('The scene stills and reported results remain available. Video information could not be loaded.'));
 enhanceResults().catch(() => {});
+
+// Keep the HTML players usable without JavaScript and match the interaction cards when enhanced.
+const robotVideos = document.querySelectorAll('#real-robot .robot-media video');
+robotVideos.forEach((video) => {
+  const label = video.getAttribute('aria-label');
+  video.parentElement.append(videoCover(video, video.getAttribute('poster'), label, 'Play clip', { feature: false }));
+  video.addEventListener('play', () => robotVideos.forEach((other) => { if (other !== video) other.pause(); }));
+});
 
 // The original full-size image remains available when JavaScript is disabled.
 const paperDialog = $('paper-dialog');
